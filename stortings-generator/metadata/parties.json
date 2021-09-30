@@ -1,0 +1,64 @@
+{
+    "last_modified": "2021-09-29",
+    "version": 1.0,
+    "created_by": "Christopher Coello",
+    "data":{
+        "total_seats": 169,
+        "parties":[
+            {
+                "name":"Rødt",
+                "shortname": "R",
+                "logo":"logo_ap.svg",
+                "color": "#85040c"
+            },
+            {
+                "name":"Sosialistisk Venstreparti",
+                "shortname": "SV",
+                "logo":"logo_sp.svg",
+                "color": "#cc08c9"
+            },
+            {
+                "name":"Arbeiderpartiet",
+                "shortname": "AP",
+                "logo":"logo_ap.svg",
+                "color": "#e81502"
+            },
+            {
+                "name":"Senterpartiet",
+                "shortname": "SP",
+                "logo":"logo_sp.svg",
+                "color": "#b7cc2b"
+            },
+            {
+                "name":"Miljøpartiet De Grønne",
+                "shortname": "MDG",
+                "logo":"logo_mdg.svg",
+                "color": "#5c8a3e"
+            },
+            {
+                "name":"Kristelig Folkeparti",
+                "shortname": "KRF",
+                "logo":"logo_sp.svg",
+                "color": "#ffb53d"
+            },
+            {
+                "name":"Venstre",
+                "shortname": "V",
+                "logo":"logo_sp.svg",
+                "color": "#12c4a7"
+            },
+            {
+                "name":"Høyre",
+                "shortname": "H",
+                "logo":"logo_sp.svg",
+                "color": "#009de0"
+            },
+            {
+                "name":"Fremskrittspartiet",
+                "shortname": "FRP",
+                "logo":"logo_sp.svg",
+                "color": "#15498c"
+            }
+        ]
+    }
+}
