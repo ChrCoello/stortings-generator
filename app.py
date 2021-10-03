@@ -3,12 +3,9 @@
 # General python distribution
 import json
 from pathlib import Path
-from waitress import serve
 #import logging
-import os
 import random
 import pandas as pd
-
 
 # 3party libraries
 from dash import Dash
@@ -17,10 +14,10 @@ import plotly.express as px
 
 
 # Locally
-from . import APP_NAME, __version__
-from .utils import parse_trafo_json, rnd_to_sum_with_min
-from .enums import Metadata
-from .layout import define_layout
+APP_NAME = 'stortings-generator'
+from utils import parse_trafo_json, rnd_to_sum_with_min
+from enums import Metadata
+from layout import define_layout
 
 # Initialize app
 app = Dash(
@@ -31,8 +28,7 @@ app = Dash(
 server = app.server
 
 # Get relative data folder
-ROOT_PATH = Path(__file__).parent
-METADATA_PATH = ROOT_PATH.joinpath("metadata").resolve()
+METADATA_PATH = Path("metadata")
 #
 
 # Parse the metadata info
@@ -88,5 +84,3 @@ def start_simulation_clb(n_clicks, parties):
 if __name__ == '__main__':
     # Use this during the dev phase
     app.run_server(host='0.0.0.0', port='8080', debug=True)
-    # Use this when deplying the service
-    #serve(app.server, host="0.0.0.0", port=8080, threads=8)
