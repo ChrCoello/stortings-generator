@@ -69,15 +69,23 @@ def start_simulation_clb(n_clicks, parties):
         df = pd.DataFrame(index=parties_order)
         df_t = pd.DataFrame(data=[(antall,party['shortname'],party['name'],party['color']) for antall,party in zip(seats_assigned,parties)],columns=['seats','party_name','name','color']).set_index('party_name')
         df = df.merge(df_t,how='left',left_index=True,right_index=True).reset_index()
-        #df = df.sort_values(by='seats',ascending=False)
         #
-        #simulation_json = export_data_to_div(simulation_df[[col_name]])
-        #print(df.head())
-        fig0 = px.bar(data_frame=df, x="index", y="seats",color='name',color_discrete_sequence=df['color'])
+        fig0 = px.bar(
+            data_frame=df, 
+            x="index", 
+            y="seats",
+            color='name',
+            text='seats',
+            color_discrete_sequence=df['color'],
+            labels=dict(index='')
+            )
+        fig0.update_traces(texttemplate='%{text}', textposition='outside')
+        fig0.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+        #
     return fig0
 
 if __name__ == '__main__':
     # Use this during the dev phase
-    app.run_server(host='0.0.0.0', port='8080', debug=True)
+    #app.run_server(host='0.0.0.0', port='8080', debug=True)
     # Use this when deplying the service
-    #serve(app.server, host="0.0.0.0", port=8080, threads=8)
+    serve(app.server, host="0.0.0.0", port=8080, threads=8)
