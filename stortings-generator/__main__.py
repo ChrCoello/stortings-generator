@@ -28,6 +28,7 @@ app = Dash(
     assets_url_path='/'+APP_NAME+'/assets', 
     requests_pathname_prefix=None
     )
+server = app.server
 
 # Get relative data folder
 ROOT_PATH = Path(__file__).parent
