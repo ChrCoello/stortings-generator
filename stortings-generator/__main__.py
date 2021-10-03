@@ -87,6 +87,6 @@ def start_simulation_clb(n_clicks, parties):
 
 if __name__ == '__main__':
     # Use this during the dev phase
-    #app.run_server(host='0.0.0.0', port='8080', debug=True)
+    app.run_server(host='0.0.0.0', port='8080', debug=True)
     # Use this when deplying the service
-    serve(app.server, host="0.0.0.0", port=8080, threads=8)
+    #serve(app.server, host="0.0.0.0", port=8080, threads=8)
